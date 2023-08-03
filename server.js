@@ -21,6 +21,7 @@ app.get('/users', (req, res) => {
     })
 })
 
+
 app.post('/api', (req, res) => {
     pool.query(`INSERT INTO users(username) VALUES ('${req.body.username}')`,(err, data) => {
         if(err) return res.send(err);
