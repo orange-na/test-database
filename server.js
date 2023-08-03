@@ -1,7 +1,6 @@
 const express = require('express');
 const pool = require('./db');
 const app = express();
-const PORT = 5000;
 
 app.use(express.json());
 
@@ -16,6 +15,6 @@ app.get('/users', (req, res) => {
     })
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 8800, () => {
     console.log('connected to server successfully!')
 });
