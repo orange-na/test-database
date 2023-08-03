@@ -1,8 +1,14 @@
 const express = require('express');
 const pool = require('./db');
 const app = express();
+const cors = require('cors');
+const corsOptions = {
+    origin: 'https://test-database-xijq.onrender.com',
+    credentials: true,
+};
 
 app.use(express.json());
+app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
     res.send('Hello Express!!');
