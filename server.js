@@ -15,6 +15,13 @@ app.get('/users', (req, res) => {
     })
 })
 
+app.post('/api', (req, res) => {
+    pool.query('INSERT INTO users(`username`) VALUES (`kkkkkk`)',(err, data) => {
+        if(err) return res.send(err);
+        return res.json('username has been created successfully!')
+    })
+})
+
 app.listen(process.env.PORT || 8800, () => {
     console.log('connected to server successfully!')
 });
